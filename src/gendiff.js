@@ -8,6 +8,8 @@ function gendiff() {
 
   program
     .helpOption('-V, --version', 'output the version number')
+    .option('-f, --format [type]', 'output format')
+    .arguments('<filepath1> <filepath2>')
     .helpOption('-h, --help', 'output usage information');
 
   program.parse();
