@@ -1,18 +1,9 @@
-import { program } from 'commander';
+import { getFileContext } from './utils.js';
 
-function gendiff() {
-  program
-    .name('gendiff')
-    .description('Compares two configuration files and shows a difference.')
-    .version('1.0.0');
-
-  program
-    .helpOption('-V, --version', 'output the version number')
-    .option('-f, --format [type]', 'output format')
-    .arguments('<filepath1> <filepath2>')
-    .helpOption('-h, --help', 'output usage information');
-
-  program.parse();
+function genDiff(filePath1, filePath2) {
+  const f1 = getFileContext(filePath1);
+  const f2 = getFileContext(filePath2);
+  console.log(f1, f2)
 }
 
-export default gendiff;
+export default genDiff;
